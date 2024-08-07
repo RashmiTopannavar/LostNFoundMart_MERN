@@ -35,3 +35,9 @@ npm i react-router-bootstrap
     The react-router-bootstrap package is a helper library that integrates react-router-dom with react-bootstrap components. 
     It allows you to use react-router-dom's Link component within react-bootstrap components such as 
     Nav.Link, Button, and others, providing seamless navigation within your React application.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+Interview Questions:
+1. How does React render?
+2. what is virtual dom?
