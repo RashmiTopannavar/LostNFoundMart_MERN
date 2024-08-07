@@ -1,7 +1,7 @@
-// Importing necessary components from react-bootstrap
-import { Navbar, Nav, Container } from 'react-bootstrap';
-// Importing icons from react-icons library (Font Awesome set)
-import { FaShoppingCart, FaUser } from 'react-icons/fa';
+import { Navbar, Nav, Container } from 'react-bootstrap'; // Importing necessary components from react-bootstrap
+import { FaShoppingCart, FaUser } from 'react-icons/fa'; //(Font Awesome set)
+import logo from '../assets/logo.png';
+
 
 // Define the Header functional component
 const Header = () => {
@@ -13,7 +13,10 @@ const Header = () => {
                 {/* Container component to center content */}
                 <Container>
                     {/* Navbar brand component with a link to the home page */}
-                    <Navbar.Brand href='/'>LostNFoundMart</Navbar.Brand>
+                    <Navbar.Brand href='/'>
+                    <img src={logo} alt='LostNFoundMart'/>
+                    LostNFoundMart
+                    </Navbar.Brand>
                     {/* Navbar toggle button for responsive navigation */}
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     {/* Collapsible part of the navbar, contains the navigation links */}
