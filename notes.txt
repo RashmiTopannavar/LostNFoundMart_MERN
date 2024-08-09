@@ -75,6 +75,9 @@ npm i axios
 npm i mongoose
     Installing mongoose adds the MongoDB object modeling tool to your project, 
     allowing you to work with MongoDB in an elegant and straightforward way using schemas and models.
+
+npm i bcryptjs
+    Library used for hashing passwords in Node.js applications but is implemented purely in JavaScript
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
