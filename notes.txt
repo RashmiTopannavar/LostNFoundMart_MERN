@@ -67,6 +67,9 @@ npm run server:
 
 npm i -D dotenv
     Is used to install the dotenv package as a development dependency in your Node.js project. 
+
+npm i axios
+    Axios is a popular HTTP client for making requests to servers, often used for interacting with APIs.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Interview Questions:
