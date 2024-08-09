@@ -85,6 +85,14 @@ npm i colors
 npm run data:import
 npm run data:destroy
 
+npm i @reduxjs/toolkit react-redux
+    Installs two important libraries for managing global state in React applications.
+    @reduxjs/toolkit (RTK):      is the official, recommended way to write Redux logic. 
+    It simplifies the process of writing Redux logic by providing a set of tools and best practices.
+
+    react-redux:         is a library that allows React components to interact with the Redux store. 
+    It provides a way to connect your React components to the global state managed by Redux.
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
