@@ -70,6 +70,11 @@ npm i -D dotenv
 
 npm i axios
     Axios is a popular HTTP client for making requests to servers, often used for interacting with APIs.
+
+
+npm i mongoose
+    Installing mongoose adds the MongoDB object modeling tool to your project, 
+    allowing you to work with MongoDB in an elegant and straightforward way using schemas and models.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
