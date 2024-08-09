@@ -78,6 +78,13 @@ npm i mongoose
 
 npm i bcryptjs
     Library used for hashing passwords in Node.js applications but is implemented purely in JavaScript
+
+npm i colors
+    Used to style and colorize console output in Node.js applications
+
+npm run data:import
+npm run data:destroy
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
