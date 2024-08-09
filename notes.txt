@@ -51,6 +51,19 @@ npm i express
     Installs Express:
     Updates package.json:
     Creates package-lock.json:
+
+npm i -D nodemon concurrently
+    nodemon:    It is typically used during development to avoid manually stopping and 
+    restarting the server whenever you make changes to your code.
+    concurrently:    Is a tool that allows you to run multiple commands concurrently, 
+    such as running both the server and front-end development servers at the same time.
+
+    The -D flag (or --save-dev) ensures that these packages are added to the "devDependencies" section in your package.json file, 
+    meaning they are only installed in development environments and not in production.
+
+npm run server: 
+    to start the server
+    Because thats where we have initialised nodemon
 ------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Interview Questions:
