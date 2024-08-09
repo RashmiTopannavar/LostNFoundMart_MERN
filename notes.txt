@@ -15,6 +15,7 @@ git push -u origin main
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
+Frontend
 ------------------------------------------------------------------------------------------------------------------------------------------------
 npx create-react-app frontend creating react app
 
@@ -36,6 +37,20 @@ npm i react-router-bootstrap
     It allows you to use react-router-dom's Link component within react-bootstrap components such as 
     Nav.Link, Button, and others, providing seamless navigation within your React application.
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+Backend
+------------------------------------------------------------------------------------------------------------------------------------------------
+npm init    or     'npm init -y' -> to skip all questions
+    The npm init command is used to create a package.json file for your Node.js project, 
+    which will store metadata about the project and manage its dependencies. 
+
+npm i express
+    Used to install the Express framework for your Node.js project. 
+    Here's what happens when you run this command:
+
+    Installs Express:
+    Updates package.json:
+    Creates package-lock.json:
 ------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Interview Questions:
