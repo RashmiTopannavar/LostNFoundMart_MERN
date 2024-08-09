@@ -64,6 +64,9 @@ npm i -D nodemon concurrently
 npm run server: 
     to start the server
     Because thats where we have initialised nodemon
+
+npm i -D dotenv
+    Is used to install the dotenv package as a development dependency in your Node.js project. 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Interview Questions:
