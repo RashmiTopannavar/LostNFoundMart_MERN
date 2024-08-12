@@ -11,7 +11,10 @@ const protect = asyncHandler(async(req,res,next) =>{
 
     if(token){
         try {
-            const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            //If the token is valid, jwt.verify() returns the decoded payload (in this case, { userId: user._id }).
+            const decoded = jwt.verify(token, process.env.JWT_SECRET); //verifies the authenticity of the token using the secret key 
+            // Find the user in the database using the userId from the decoded token
+            // Exclude the password field from the returned user object for security reasons
             req.user = await User.findById(decoded.userId).select(-'password');
             next();
         } catch (error) {
@@ -31,7 +34,7 @@ const admin = (req, res, next) =>{
         next();
     }else{
         res.status(401);
-        throw new Error('Npt authorised as admin');
+        throw new Error('Not authorised as admin');
     }
 };
 
