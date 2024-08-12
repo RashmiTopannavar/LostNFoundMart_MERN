@@ -93,6 +93,9 @@ npm i @reduxjs/toolkit react-redux
     react-redux:         is a library that allows React components to interact with the Redux store. 
     It provides a way to connect your React components to the global state managed by Redux.
 
+npm i jsonwebtoken:
+    This library allows you to create, sign, and verify JSON Web Tokens (JWT), 
+    which are used to securely transmit information between parties as a JSON object.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------------------------------

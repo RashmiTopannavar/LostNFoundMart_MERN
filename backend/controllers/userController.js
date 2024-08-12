@@ -1,5 +1,6 @@
 import asyncHandler from '../middleware/asyncHandler.js';
 import User from '../models/userModel.js';
+import jwt from 'jsonwebtoken';
 
 // @desc    Auth user & get token
 // @route   POST /api/users/login
@@ -10,6 +11,19 @@ const authUser = asyncHandler(async (req, res) => {
     const user = await User.findOne({email});
 
     if(user && (await user.matchPassword(password))){
+      const token = jwt.sign({userId: user._id}, process.env.JWT_SECRET, {
+        expiresIn: '30d'
+      });
+
+      //Set JWT as HTTP-Only cookie
+      res.cookie('jwt', token, {  //This method sets a cookie in the user's browser with name 'jwt' and with token that was just created
+        httpOnly : true,
+        secure: process.env.NODE_ENV != 'development',
+        sameSite: 'strict',
+        maxAge: 30 * 24 * 60 * 60 * 1000 // 30 days in millisecs
+      })
+
+
         res.json({
             _id: user._id,
             name:user.name,
@@ -90,3 +104,11 @@ export {
   updateUser,
   logoutUser
 };
+
+
+//FLow of JWT HTTP-ONLY Cookie:
+
+// User submits login credentials (username/email and password).
+// Server checks if the user exists and if the password is correct.
+// If the credentials are valid, a JWT is created that contains the user's ID.
+// The JWT is sent back to the client as an HTTP-only cookie, which will be used for subsequent requests to authenticate the user.
