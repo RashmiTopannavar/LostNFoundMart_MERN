@@ -96,6 +96,10 @@ npm i @reduxjs/toolkit react-redux
 npm i jsonwebtoken:
     This library allows you to create, sign, and verify JSON Web Tokens (JWT), 
     which are used to securely transmit information between parties as a JSON object.
+
+npm i cookie-parser
+    Is useful when you need to parse cookies from incoming requests in a Node.js/Express application. 
+    It allows you to easily access and manage cookies within your server code.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
