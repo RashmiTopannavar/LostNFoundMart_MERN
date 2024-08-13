@@ -13,7 +13,7 @@ const authSlice = createSlice({
     initialState,  // Setting the initial state defined above
     reducers: {  // Reducers define how state is updated
         setCredentials: (state, action) => {
-            state.userInfo = action.payload;  // Update the userInfo in state with the new data from the action payload
+            state.userInfo = action.payload;  // action.payload typically contains user information such as name, email, token, etc., which are returned from the server after a successful login.
             localStorage.setItem('userInfo', JSON.stringify(action.payload));  // Save the updated userInfo to localStorage
         },
         logout: (state, action) =>{
