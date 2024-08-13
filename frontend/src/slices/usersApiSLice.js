@@ -8,7 +8,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
             // Define a mutation for the login functionality
             query: (data) => ({
                 // Configure the API request
-                url: `${USERS_URL}/authSlice`, // Endpoint URL for login
+                url: `${USERS_URL}/auth`, // Endpoint URL for login
                 method: 'POST', // HTTP method for the request
                 body: data, // The data to be sent in the body of the POST request
             }),
