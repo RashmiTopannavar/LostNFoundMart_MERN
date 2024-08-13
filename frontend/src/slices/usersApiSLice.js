@@ -33,3 +33,5 @@ export const usersApiSlice = apiSlice.injectEndpoints({
 // Export the useLoginMutation hook
 // This hook is used in React components to trigger the login mutation and handle the response.
 export const { useLoginMutation, useLogoutMutation , useRegisterMutation} = usersApiSlice;
+
+
