@@ -2,18 +2,38 @@ import { Navbar, Nav, Container, Badge, NavDropdown } from 'react-bootstrap';
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { LinkContainer } from 'react-router-bootstrap'
 import logo from '../assets/logo.png';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import { useLogoutMutation } from '../slices/usersApiSlice';
+import {logout} from '../slices/authSlice';
+import {useNavigate} from 'react-router-dom';
 
 const Header = () => {
 
     const { cartItems } = useSelector((state) => state.cart);
     const { userInfo } = useSelector((state) => state.auth);
-    console.log(cartItems);
-    console.log(userInfo);
-    
 
-    const logoutHandler =() =>{
-        console.log('logout');
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const [logoutApiCall] = useLogoutMutation();
+
+    const logoutHandler = async () => {
+        try {
+            // Call the logout API and wait for the result.
+            await logoutApiCall().unwrap(); //.unwrap() is used to unwrap the result of the mutation. If the API call fails, it will throw an error that you can catch in the catch block.
+            
+            // Dispatch the logout action to clear user info from the state.
+            dispatch(logout());
+            
+            // Navigate the user to the login page.
+            navigate('/login');
+        } catch (err) {
+            // Log any errors that occur during the logout process.
+            console.log(err);
+        }
+    };
+    
+        
     }
 
     return (

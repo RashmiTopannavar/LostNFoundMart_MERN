@@ -13,9 +13,16 @@ export const usersApiSlice = apiSlice.injectEndpoints({
                 body: data, // The data to be sent in the body of the POST request
             }),
         }),
+        logout: builder.mutation({
+            query: () =>({
+                url: `${USERS_URL}/logout`, //specifies the API endpoint to which the request will be sent.
+                method: 'POST' // used for logout operations to clear the server-side session or cookies.
+
+            }),
+        }),
     }),
 });
 
 // Export the useLoginMutation hook
 // This hook is used in React components to trigger the login mutation and handle the response.
-export const { useLoginMutation } = usersApiSlice;
+export const { useLoginMutation, useLogoutMutation } = usersApiSlice;
