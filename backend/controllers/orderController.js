@@ -5,7 +5,6 @@ import Order from '../models/orderModel.js';
 // @route   POST /api/orders
 // @access  Private
 const addOrderItems = asyncHandler(async (req, res) => {
-
   const {
     orderItems,
     shippingAddress,
@@ -14,33 +13,33 @@ const addOrderItems = asyncHandler(async (req, res) => {
     taxPrice,
     shippingPrice,
     totalPrice,
-  } = req.body
+  } = req.body;
 
-  if (orderItems && orderItems.length === 0){
+  if( orderItems && orderItems.length === 0) {
     res.status(400);
-    throw new Error('No order items'); 
-  }else{
+    throw new Error('No Order items')
 
-        const order = new Order({
-            orderItems : orderItems.map((x) => ({
-                ...x,
-                product: x._id,
-                _id: undefined
-            })),
-            user: req.user._id,
-            shippingAddress,
-            paymentMethod,
-            itemsPrice,
-            taxPrice,
-            shippingPrice,
-            totalPrice,
-        });
-    
-        const createdOrder = await order.save();
+  } else {
+    const order = new Order({
+        orderItems: orderItems.map((x) => ({
+            ...x,
+            product: x._id,
+            _id: undefined
+        })),
+        user: req.user._id,
+        shippingAddress,
+        paymentMethod,
+        itemsPrice,
+        taxPrice,
+        shippingPrice,
+        totalPrice,
 
-        res.status(201).json(createdOrder);
-    
-    }
+    });
+    const createdOrder = await order.save();
+
+    res.status(201).json(createdOrder);
+  }
+
 });
 
 // @desc    Get order by ID
