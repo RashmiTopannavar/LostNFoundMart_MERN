@@ -103,6 +103,10 @@ npm i cookie-parser
 
 npm i react-toastify 
     To get toast messages like successful login
+
+npm i @paypal/react-paypal-js
+    This will add the @paypal/react-paypal-js package to your project, 
+    allowing you to integrate PayPal buttons and functionality into your React application.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Paypal:
 Login
@@ -116,5 +120,5 @@ Business - Business acc where get money from
 Personal - the account we send money from
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Interview Questions:
-1. How does React render?
+1. How does React render?       
 2. what is virtual dom?
