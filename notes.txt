@@ -104,7 +104,16 @@ npm i cookie-parser
 npm i react-toastify 
     To get toast messages like successful login
 ------------------------------------------------------------------------------------------------------------------------------------------------
+Paypal:
+Login
 
+https://developer.paypal.com/home/
+
+Sandbox >Testing Tools > Sandbox Accound > Business and personal
+Apps and Credentials > Create App > Give a name > Merchant > Sandbox account - Default from the dropdown
+Open the one u created > Copy Client ID
+Business - Business acc where get money from
+Personal - the account we send money from
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Interview Questions:
 1. How does React render?
