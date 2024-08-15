@@ -6,10 +6,12 @@ import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import 
-{useGetOrderDetailsQuery, 
-useGetPayPalClientIdQuery, 
-usePayOrderMutation} from '../slices/orderApiSlice'
+import {
+    useGetOrderDetailsQuery, 
+    useGetPayPalClientIdQuery, 
+    usePayOrderMutation,
+    useDeliverOrderMutation,
+    } from '../slices/orderApiSlice'
 
 const OrderScreen = () => {
   const { id: orderId } = useParams();
@@ -23,6 +25,7 @@ const OrderScreen = () => {
 
   const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
 
+  const [deliverOrder, {isLoading: loadingDeliver }] = useDeliverOrderMutation();
 
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -67,12 +70,12 @@ const OrderScreen = () => {
   }
 
   // TESTING ONLY! REMOVE BEFORE PRODUCTION
-  async function onApproveTest() {
-    await payOrder({ orderId, details: { payer: {} } });
-    refetch();
+  // async function onApproveTest() {
+  //   await payOrder({ orderId, details: { payer: {} } });
+  //   refetch();
 
-    toast.success('Order is paid');
-  }
+  //   toast.success('Order is paid');
+  // }
 
   function onError(err) {
     toast.error(err.message);
@@ -92,10 +95,10 @@ const OrderScreen = () => {
       });
   }
 
-  // const deliverHandler = async () => {
-  //   await deliverOrder(orderId);
-  //   refetch();
-  // };
+  const deliverOrderHandler = async () => {
+    await deliverOrder(orderId);
+    refetch();
+  };
 
   return isLoading ? (
     <Loader />
@@ -216,12 +219,12 @@ const OrderScreen = () => {
                   ) : (
                     <div>
                       {/* THIS BUTTON IS FOR TESTING! REMOVE BEFORE PRODUCTION! */}
-                      <Button
+                      {/* <Button
                         style={{ marginBottom: '10px' }}
                         onClick={onApproveTest}
                       >
                         Test Pay Order
-                      </Button>
+                      </Button> */}
 
                       <div>
                         <PayPalButtons
@@ -235,7 +238,7 @@ const OrderScreen = () => {
                 </ListGroup.Item>
               )}
 
-              {/* {loadingDeliver && <Loader />} */}
+              {loadingDeliver && <Loader />}
 
               {userInfo &&
                 userInfo.isAdmin &&
@@ -245,7 +248,7 @@ const OrderScreen = () => {
                     <Button
                       type='button'
                       className='btn btn-block'
-                      // onClick={deliverHandler}
+                      onClick={deliverOrderHandler}
                     >
                       Mark As Delivered
                     </Button>
