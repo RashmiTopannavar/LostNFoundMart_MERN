@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { useProfileMutation } from '../slices/usersApiSlice';
-//import { useGetMyOrdersQuery } from '../slices/ordersApiSlice';
+import { useGetMyOrdersQuery} from '../slices/orderApiSlice';
 import { setCredentials } from '../slices/authSlice';
 import { Link } from 'react-router-dom';
 
@@ -19,12 +19,12 @@ const ProfileScreen = () => {
 
   const { userInfo } = useSelector((state) => state.auth);
 
-  //const { data: orders, isLoading, error } = useGetMyOrdersQuery();
+  const { data: orders, isLoading, error } = useGetMyOrdersQuery();
 
   const [updateProfile, { isLoading: loadingUpdateProfile }] =
     useProfileMutation();
 
-  useEffect(() => {
+  useEffect(() => {         //To populate the old user profile details we have userInfo.name and email
     setName(userInfo.name);
     setEmail(userInfo.email);
   }, [userInfo.email, userInfo.name]);
@@ -101,7 +101,7 @@ const ProfileScreen = () => {
           <Button type='submit' variant='primary'>
             Update
           </Button>
-          {/* {loadingUpdateProfile && <Loader />}
+          {loadingUpdateProfile && <Loader />}
         </Form>
       </Col>
       <Col md={9}>
@@ -156,10 +156,10 @@ const ProfileScreen = () => {
                   </td>
                 </tr>
               ))}
-            </tbody> */}
-          {/* </Table>
-        )} */}
-        </Form>
+            </tbody> 
+          </Table>
+        )}
+        
       </Col>
     </Row>
   );
