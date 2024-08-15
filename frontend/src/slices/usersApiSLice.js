@@ -27,11 +27,19 @@ export const usersApiSlice = apiSlice.injectEndpoints({
 
             }),
         }),
+        profile: builder.mutation({
+            query: (data) => ({
+                url: `${USERS_URL}/profile`,
+                method: 'PUT',
+                body: data,
+            }),
+        }),
+        
     }),
 });
 
 // Export the useLoginMutation hook
 // This hook is used in React components to trigger the login mutation and handle the response.
-export const { useLoginMutation, useLogoutMutation , useRegisterMutation} = usersApiSlice;
+export const { useLoginMutation, useLogoutMutation , useRegisterMutation, useProfileMutation} = usersApiSlice;
 
 
