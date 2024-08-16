@@ -50,10 +50,26 @@ export const usersApiSlice = apiSlice.injectEndpoints({
                 url: `${USERS_URL}/${userId}`,
                 method: 'DELETE'
             })
-        })
-        
-    }),
-});
+        }),
+
+        getUserDetails: builder.query({
+            query: (userId) => ({
+                url: `${USERS_URL}/${userId}`,
+            }),
+            keepUnusedDataFor: 5,
+        }),
+        updateUser: builder.mutation({
+            query: (data ) => ({
+                url: `${USERS_URL}/${data.userId}`,
+                method: 'PUT',
+                body: data,
+            }),
+            invalidatesTags: ['User'],
+        }),
+    })
+})
+    
+
 
 // Export the useLoginMutation hook
 // This hook is used in React components to trigger the login mutation and handle the response.
@@ -64,6 +80,8 @@ export const {
     useProfileMutation,
     useGetUsersQuery,
     useDeleteUserMutation,
+    useGetUserDetailsQuery,
+    useUpdateUserMutation,
 } = usersApiSlice;
 
 
