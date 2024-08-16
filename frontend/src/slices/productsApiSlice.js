@@ -10,7 +10,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
             query: () => ({
                 url: PRODUCTS_URL, // The endpoint URL to fetch products
             }),
-            providesTags : ['Product'],
+            providesTags : ['Products'],
             keepUnusedDataFor: 5 // Cache the data for 5 seconds
         }),
 
@@ -35,7 +35,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
                 method: 'PUT',
                 body: data,
             }),
-            invalidatesTags: ['Product'],
+            invalidatesTags: ['Products'],
         })
     }),
 });

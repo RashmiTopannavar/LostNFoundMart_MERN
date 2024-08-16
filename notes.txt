@@ -107,6 +107,10 @@ npm i react-toastify
 npm i @paypal/react-paypal-js
     This will add the @paypal/react-paypal-js package to your project, 
     allowing you to integrate PayPal buttons and functionality into your React application.
+
+npm i multer
+    Used for uploading files. It processes incoming files in your web application, storing them in memory 
+    or on disk, and provides methods for accessing file data within your request handlers.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Paypal:
 Login
