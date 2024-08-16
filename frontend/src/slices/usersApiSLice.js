@@ -20,6 +20,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
                 body: data,
             }),
         }),
+
         logout: builder.mutation({
             query: () =>({
                 url: `${USERS_URL}/logout`, //specifies the API endpoint to which the request will be sent.
@@ -27,6 +28,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
 
             }),
         }),
+
         profile: builder.mutation({
             query: (data) => ({
                 url: `${USERS_URL}/profile`,
@@ -34,12 +36,26 @@ export const usersApiSlice = apiSlice.injectEndpoints({
                 body: data,
             }),
         }),
+
+        getUsers: builder.query({
+            query: () => ({
+                url: USERS_URL
+            }),
+            providesTags: ['Users'],
+            keepUnusedDataFor: 5
+        })
         
     }),
 });
 
 // Export the useLoginMutation hook
 // This hook is used in React components to trigger the login mutation and handle the response.
-export const { useLoginMutation, useLogoutMutation , useRegisterMutation, useProfileMutation} = usersApiSlice;
+export const { 
+    useLoginMutation, 
+    useLogoutMutation , 
+    useRegisterMutation, 
+    useProfileMutation,
+    useGetUsersQuery,
+} = usersApiSlice;
 
 
