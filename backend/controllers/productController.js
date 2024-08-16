@@ -76,7 +76,7 @@ const updateProduct = asyncHandler( async (req, res) =>{
 // @route    Delete /api/products/:id
 // @access   Private / Admin
 const deleteProduct = asyncHandler( async(req, res) => {
-    const product = await Product.fi(req.params.id);
+    const product = await Product.findById(req.params.id);
 
     if(product){
         await Product.deleteOne({_id: product._id});
@@ -89,4 +89,4 @@ const deleteProduct = asyncHandler( async(req, res) => {
 })
 
 
-export { getProducts, getProductById, createProduct, updateProduct, deleteProductx };
+export { getProducts, getProductById, createProduct, updateProduct, deleteProduct };
