@@ -111,6 +111,11 @@ npm i @paypal/react-paypal-js
 npm i multer
     Used for uploading files. It processes incoming files in your web application, storing them in memory 
     or on disk, and provides methods for accessing file data within your request handlers.
+
+npm i react-helmet-async
+    Used in React applications to manage changes to the document head.
+    It is particularly useful for managing elements like <title>, <meta>, and 
+    other tags that should be added to the <head> section of your HTML document 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Paypal:
 Login
