@@ -7,9 +7,10 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         // Define a new query endpoint for fetching products
         getProducts: builder.query({
             // Specify the API request details
-            query: ({pageNumber}) => ({
+            query: ({keyword, pageNumber}) => ({
                 url: PRODUCTS_URL, // The endpoint URL to fetch products
                 params:{
+                    keyword,
                     pageNumber,
                 },
             }),
