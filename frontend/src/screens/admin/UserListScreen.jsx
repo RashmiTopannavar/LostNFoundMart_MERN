@@ -4,8 +4,8 @@ import { Table, Button } from 'react-bootstrap';
 import { FaTrash, FaEdit, FaCheck, FaTimes } from 'react-icons/fa';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
-import { useGetUsersQuery, useDeleteUserMutation } from '../../slices/usersApiSlice';
 import { toast } from 'react-toastify';
+import { useGetUsersQuery, useDeleteUserMutation } from '../../slices/usersApiSlice';
 
 const UserListScreen = () => {
   const { data: users, refetch, isLoading, error } = useGetUsersQuery();

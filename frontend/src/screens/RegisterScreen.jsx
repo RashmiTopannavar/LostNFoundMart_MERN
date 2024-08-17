@@ -4,9 +4,9 @@ import {Form, Button, Row, Col} from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
 import Loader from "../components/Loader";
-import {useRegisterMutation} from '../slices/usersApiSlice';
 import { setCredentials } from "../slices/authSlice";
 import { toast } from "react-toastify";
+import { useRegisterMutation } from "../slices/usersApiSlice";
 
 const RegisterScreen = () => {
     const [name, setName] = useState('')

@@ -5,11 +5,8 @@ import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import FormContainer from '../../components/FormContainer';
 import { toast } from 'react-toastify';
+import { useGetUserDetailsQuery,useUpdateUserMutation } from '../../slices/usersApiSlice';
 import { useParams } from 'react-router-dom';
-import {
-  useGetUserDetailsQuery,
-  useUpdateUserMutation,
-} from '../../slices/usersApiSlice';
 
 const UserEditScreen = () => {
   const { id: userId } = useParams();
