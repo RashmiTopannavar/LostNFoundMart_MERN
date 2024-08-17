@@ -7,6 +7,7 @@ import { useLogoutMutation } from '../slices/usersApiSlice';
 import {logout} from '../slices/authSlice';
 import {useNavigate} from 'react-router-dom';
 import SearchBox from './SearchBox';
+import { resetCart } from '../slices/cartSlice';
 
 const Header = () => {
 
@@ -25,7 +26,7 @@ const Header = () => {
             
             // Dispatch the logout action to clear user info from the state.
             dispatch(logout());
-            
+            dispatch(resetCart());
             // Navigate the user to the login page.
             navigate('/login');
         } catch (err) {
